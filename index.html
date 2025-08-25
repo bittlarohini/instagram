@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      height: 100dvh;
+      width: 100dvw;
+      background-color: aquamarine;
+    }
+    .left {
+      height: 100dvh;
+      width: 15dvw;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: scroll;
+      scrollbar-width: none;
+      border-right: 0.5px solid black;
+    }
+    .top {
+      height: 15dvh;
+      width: 55dvw;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      left: 15dvw;
+      
+      
+    }
+    .mainmain {
+      height: 100dvh;
+      width: 85dvw;
+      overflow: scroll;
+      scrollbar-width: none;
+      background-color: white;
+    }
+    .main {
+      height: 85dvh;
+      width: 55dvw;
+      background-color: white;
+      position: fixed;
+      top: 15dvh;
+      left: 15dvw;
+      overflow: scroll;
+      scrollbar-width: none;
+    }
+    .posts {
+      height: 80dvh;
+      width: 25dvw;
+      background-color: black;
+      margin-top: 10px;
+      margin-bottom: 30px ;
+      margin-left: 15dvw ;
+      margin-right: 15dvw;
+    }
+    .right {
+      height: 100dvh;
+      width: 35dvw;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      right: 0;
+      h8{
+          margin-left: 20px;
+          margin-top: 20px;
+      }
+    }
+    .insta {
+      background-color: white;
+      font-family: "Pacifico", cursive;
+      font-size: 20px;
+      color: black;
+      padding: 15px;
+      margin-top: 10px;
+      p {
+        margin-left: 8px;
+      }
+      cursor: pointer;
+    }
+    .box {
+      background-color: white;
+      color: black;
+      transition: 0.4s all ease;
+      margin-left: 3px;
+      margin-right: 3px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 5px;
+      padding: 10px;
+    }
+    .icon {
+      width: 20px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 10px 0px 0px 10px;
+      margin-left: 5px;
+    }
+
+    .text {
+      width: 80px;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 0px 10px 10px 0px;
+      margin-left: 0px;
+    }
+
+    .box:hover {
+      background-color: rgba(183, 179, 179, 0.692);
+      .box {
+        opacity: 1;
+        transition: 0.5s all ease-in-out;
+        background-color: none;
+      }
+    }
+    .image {
+      height: 20px;
+      width: 20px;
+      background-color: black;
+      border-radius: 10px;
+      margin-left: 5px;
+      background-size: cover;
+    }
+    .storystory{
+      height: 15dvh;
+      width: 55dvw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+      scrollbar-width: none;
+      margin-left: 40px;
+      
+    }
+    .story {
+      height: 50px;
+      width: 50px;
+      background-color: green;
+      padding: 2px;
+      margin-top: 13px;
+      margin-left: 40px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .profile {
+      height: 50px;
+      width: 50px;
+      background-color: black;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .rightbox{
+      font-size: 11px;
+      height: 50px;
+      width: 25dvw;
+      background-color: white;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      h9{
+        font-size: 10px;
+        color: rgb(179, 178, 177);
+      }
+    }
+    .switch{
+      p{
+        font-size: 12px;
+        color: blue;
+        cursor: pointer;
+      }
+      margin-left: 40px;
+    }
+    .text{
+      cursor: pointer;
+    }
+    .suggested{
+      height: 20dvh;
+      width: 25dvw;
+      background-color: white;
+      margin-top: 10px;
+      margin-bottom: 30px ;
+      margin-left: 15dvw ;
+      margin-right: 15dvw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 8px;
+      i{
+        margin-bottom: 10px;
+        font-size: large;
+      }
+      p{
+        font-size: 7px;
+        margin-top: 5px;
+      }
+    }
+    .poststop{
+      height: 9dvh;
+      width: 25dvw;
+      background-color: white;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      p{
+        margin-left: 30px;
+      }
+      h9{
+        color: rgb(184, 183, 183);
+        cursor: pointer;
+      }
+    }
+    .profileimg{
+      height: 40px;
+      width: 40px;
+      border-radius: 20px;
+      margin: 3px;
+      cursor: pointer;
+    }
+    .postsmiddle{
+      height: 61dvh;
+      width: 25dvw;
+      background-color: brown;
+    }
+    .ikimage{
+      height: 61dvh;
+      width: 25dvw;
+      background: cover;
+    }
+    .postsbottom{
+      height: 10dvh;
+      width: 25dvw;
+      background-color: white;
+    }
+    .bottomtop{
+      height: 3dvh;
+      width: 25dvw;
+      i{
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    }
+    .bottombelow{
+      height: 7dvh;
+      width: 25dvw;
+      display: flex;
+      flex-direction: column;
+      b{
+        font-size: small;
+        cursor: pointer;
+      }
+      h9{
+        color: rgb(173, 172, 170);
+        font-size: smaller;
+      }
+    }
+    
+  </style>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="insta">
+          <p>Instagram</p>
+        </div>
+        <div class="box">
+          <div class="icon"><i class="fa-solid fa-house"></i></div>
+          <div class="text">Home</div>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="text">Search</div>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <div class="text">Explore</div>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa-solid fa-clapperboard"></i>
+          </div>
+          <div class="text">Reels</div>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa-solid fa-comment"></i>
+          </div>
+          <div class="text">Messages</div>
+        </div>
+        <div class="box">
+          <div class="icon"><i class="fa-regular fa-heart"></i></div>
+          <div class="text">Notifications</div>
+        </div>
+        <div class="box">
+          <div class="icon"><i class="fa-regular fa-square-plus"></i></div>
+          <div class="text">Create</div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="" alt="" />
+          </div>
+          <div class="text">Profile</div>
+        </div>
+        <div class="box">
+          <div class="icon"><i class="fa-solid fa-bars"></i></div>
+          <div class="text">More</div>
+        </div>
+        <div class="box">
+          <div class="icon"></div>
+          <div class="text"></div>
+        </div>
+      </div>
+
+      <div class="mainmain">
+        <div class="top">
+          <div class="storystory">
+            <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          <div class="story">
+            <div class="profile">
+              <img class="profile" src="profile.png" alt="" />
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="main">
+          <div class="suggested">
+            <i class="fa-regular fa-circle-check"></i>
+            <b>You've completely caught up</b>
+            <p>You've seen all new posts.Thankyou.</p>
+          </div>
+          <div class="posts">
+            <div class="poststop">
+              <img src="profile.png" class="profileimg" alt="">
+              <div class="text">
+                <h8>kajubharfii</h8>
+                <h9>rohini_bittla</h9>
+              </div>
+              <div class="switch">
+                <p>Follow</p>
+              </div>
+            
+            </div>
+            <div class="postsmiddle">
+              <img src="ik.png" class="ikimage" alt="">
+            </div>
+            <div class="postsbottom">
+              <div class="bottomtop">
+                <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-comment"></i>
+              </div>
+              <div class="bottombelow">
+                <b>IshanKishan</b>
+                <h9>Add a Comment</h9>
+              </div>
+            </div>
+          </div>
+          <div class="posts">
+            <div class="poststop">
+              <img src="profile.png" class="profileimg" alt="">
+              <div class="text">
+                <h8>kajubharfii</h8>
+                <h9>rohini_bittla</h9>
+              </div>
+              <div class="switch">
+                <p>Follow</p>
+              </div>
+            
+            </div>
+            <div class="postsmiddle">
+              <img src="ik.png" class="ikimage" alt="">
+            </div>
+            <div class="postsbottom">
+              <div class="bottomtop">
+                <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-comment"></i>
+              </div>
+              <div class="bottombelow">
+                <b>IshanKishan</b>
+                <h9>Add a Comment</h9>
+              </div>
+            </div>
+          </div>
+          <div class="posts">
+            <div class="poststop">
+              <img src="profile.png" class="profileimg" alt="">
+              <div class="text">
+                <h8>kajubharfii</h8>
+                <h9>rohini_bittla</h9>
+              </div>
+              <div class="switch">
+                <p>Follow</p>
+              </div>
+            
+            </div>
+            <div class="postsmiddle">
+              <img src="ik.png" class="ikimage" alt="">
+            </div>
+            <div class="postsbottom">
+              <div class="bottomtop">
+                <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-comment"></i>
+              </div>
+              <div class="bottombelow">
+                <b>IshanKishan</b>
+                <h9>Add a Comment</h9>
+              </div>
+            </div>
+          </div>
+          <div class="posts">
+            <div class="poststop">
+              <img src="profile.png" class="profileimg" alt="">
+              <div class="text">
+                <h8>kajubharfii</h8>
+                <h9>rohini_bittla</h9>
+              </div>
+              <div class="switch">
+                <p>Follow</p>
+              </div>
+            
+            </div>
+            <div class="postsmiddle">
+              <img src="ik.png" class="ikimage" alt="">
+            </div>
+            <div class="postsbottom">
+              <div class="bottomtop">
+                <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-comment"></i>
+              </div>
+              <div class="bottombelow">
+                <b>IshanKishan</b>
+                <h9>Add a Comment</h9>
+              </div>
+            </div>
+          </div>
+          <div class="posts">
+            <div class="poststop">
+              <img src="profile.png" class="profileimg" alt="">
+              <div class="text">
+                <h8>kajubharfii</h8>
+                <h9>rohini_bittla</h9>
+              </div>
+              <div class="switch">
+                <p>Follow</p>
+              </div>
+            
+            </div>
+            <div class="postsmiddle">
+              <img src="ik.png" class="ikimage" alt="">
+            </div>
+            <div class="postsbottom">
+              <div class="bottomtop">
+                <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-comment"></i>
+              </div>
+              <div class="bottombelow">
+                <b>IshanKishan</b>
+                <h9>Add a Comment</h9>
+              </div>
+            </div>
+          </div>
+          <div class="posts">
+            <div class="poststop">
+              <img src="profile.png" class="profileimg" alt="">
+              <div class="text">
+                <h8>kajubharfii</h8>
+                <h9>rohini_bittla</h9>
+              </div>
+              <div class="switch">
+                <p>Follow</p>
+              </div>
+            
+            </div>
+            <div class="postsmiddle">
+              <img src="ik.png" class="ikimage" alt="">
+            </div>
+            <div class="postsbottom">
+              <div class="bottomtop">
+                <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-comment"></i>
+              </div>
+              <div class="bottombelow">
+                <b>IshanKishan</b>
+                <h9>Add a Comment</h9>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="rightbox">
+            <img class="profile" src="profile.png" alt="">
+            <div class="text">
+              <p>kajubharfii</p>
+            <h9>rohini_bittla</h9>
+            </div>
+            <div class="switch">
+              <p>Switch</p>
+            </div>
+          </div>
+          <h8>Suggested for you</h8>
+          <div class="rightbox">
+            <img class="profile" src="profile.png" alt="">
+            <div class="text">
+              <p>meghana</p>
+            <h9>meghana_m</h9>
+            </div>
+            <div class="switch">
+              <p>Follow</p>
+            </div>
+          </div>
+          <div class="rightbox">
+            <img class="profile" src="profile.png" alt="">
+            <div class="text">
+              <p>rohini_bittla</p>
+            <h9>rohini.bittla</h9>
+            </div>
+            <div class="switch">
+              <p>Follow</p>
+            </div>
+          </div>
+          <div class="rightbox">
+            <img class="profile" src="profile.png" alt="">
+            <div class="text">
+              <p>arushiee__</p>
+            <h9>arushii</h9>
+            </div>
+            <div class="switch">
+              <p>Follow</p>
+            </div>
+          </div>
+          
+          <div class="rightbox">
+            <img class="profile" src="profile.png" alt="">
+            <div class="text">
+              <p>samanvisas</p>
+            <h9>samanvi</h9>
+            </div>
+            <div class="switch">
+              <p>Follow</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
